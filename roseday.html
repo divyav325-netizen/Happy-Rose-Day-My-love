@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Happy Rose Day My Love 🌹</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+
+body{
+  margin:0;
+  font-family:Poppins,sans-serif;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3,#ffc3d9);
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  height:100vh;
+  overflow:hidden;
+}
+
+/* Floating roses */
+.rose{
+  position:absolute;
+  font-size:22px;
+  animation:float 5s linear infinite;
+  opacity:0.9;
+}
+
+@keyframes float{
+  from{transform:translateY(0);}
+  to{transform:translateY(-350px);opacity:0;}
+}
+
+.container{
+  background:rgba(255,255,255,0.92);
+  width:90%;
+  max-width:430px;
+  padding:30px;
+  border-radius:30px;
+  text-align:center;
+  box-shadow:0 0 35px rgba(255,117,140,0.6);
+}
+
+.hidden{display:none;}
+
+h1{
+  font-family:'Great Vibes',cursive;
+  font-size:38px;
+  color:#d6336c;
+}
+
+h2{
+  color:#c9184a;
+}
+
+p{
+  color:#444;
+  font-size:15px;
+  line-height:1.6;
+}
+
+button{
+  background:#ff4d6d;
+  color:white;
+  border:none;
+  padding:12px 26px;
+  border-radius:30px;
+  font-size:15px;
+  cursor:pointer;
+  transition:0.3s;
+  margin-top:15px;
+  box-shadow:0 5px 15px rgba(255,77,109,0.5);
+}
+
+button:hover{
+  transform:scale(1.1);
+}
+
+.card{
+  background:#fff0f5;
+  padding:22px;
+  border-radius:25px;
+  box-shadow:0 0 15px pink;
+}
+
+</style>
+</head>
+
+<body>
+
+<!-- Floating Roses -->
+<script>
+setInterval(()=>{
+  const r=document.createElement("div");
+  r.className="rose";
+  r.innerHTML=["🌹","💖","💕","❤️","🌸"][Math.floor(Math.random()*5)];
+  r.style.left=Math.random()*100+"%";
+  r.style.bottom="0";
+  document.body.appendChild(r);
+  setTimeout(()=>r.remove(),5000);
+},600);
+</script>
+
+
+<div class="container">
+
+<!-- START -->
+<div id="start">
+
+<h1>Happy Rose Day 🌹</h1>
+
+<h2>My Handsome Husband 😘💖</h2>
+
+<p>
+This rose is not just a flower…<br>
+It is my love, my heart, my forever 💕
+</p>
+
+<button onclick="next('message')">Open Your Rose 💌</button>
+
+</div>
+
+
+<!-- MESSAGE -->
+<div id="message" class="hidden">
+
+<div class="card">
+
+<h2>For You, My Love 🌹</h2>
+
+<p>
+Every rose reminds me of you…  
+Soft, beautiful, strong, and special 💖<br><br>
+
+Just like this rose,  
+my love for you will never fade 🌸<br><br>
+
+Thank you for being my happiness,  
+my peace, my safe place 😘<br><br>
+
+With you, every day feels like Valentine 💍❤️
+</p>
+
+</div>
+
+<button onclick="next('letter')">Next 😘</button>
+
+</div>
+
+
+<!-- LOVE LETTER -->
+<div id="letter" class="hidden">
+
+<div class="card">
+
+<h2>My Rose, My Husband 💕</h2>
+
+<p>
+My Love ❤️,<br><br>
+
+If I could give you one rose for every time  
+you made me smile,  
+you’d have a whole garden by now 🥹🌹<br><br>
+
+You are my favorite person,  
+my biggest blessing,  
+my forever home 🏡💖<br><br>
+
+I promise to love you more  
+with every sunrise and sunset 🌅💕<br><br>
+
+Happy Rose Day,  
+My Forever Valentine 😘💍<br><br>
+
+Yours Always,<br>
+Divya 💕
+</p>
+
+</div>
+
+<button onclick="restart()">Read Again 😍</button>
+
+</div>
+
+</div>
+
+
+<script>
+
+function next(id){
+
+  document.querySelectorAll('.container > div')
+  .forEach(d=>d.classList.add('hidden'));
+
+  document.getElementById(id).classList.remove('hidden');
+
+}
+
+function restart(){
+  next('start');
+}
+
+</script>
+
+</body>
+</html>
